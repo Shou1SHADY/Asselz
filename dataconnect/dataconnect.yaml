@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "creative-agency-ui-next-js"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "creative-agency-ui-next-js-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]

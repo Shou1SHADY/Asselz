@@ -5,9 +5,32 @@ import ShowCase from "@/components/ShowCase";
 import Testimonial from "@/components/Testimonial";
 import { Title, TitleLogo, TitleSm } from "@/components/common/Title";
 import { BlogCard, Brand } from "@/components/router";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { db, collection, onSnapshot } from "@/firebaseConfig";
 
 const Hero = () => {
+  const [upcomingEvents, setUpcomingEvents] = useState([]);
+
+  useEffect(() => {
+    const unsubscribe = onSnapshot(collection(db, "whatsNew"), (snapshot) => {
+      if (snapshot.empty) {
+        console.log("❌ No upcoming events found in Firestore.");
+      } else {
+        const events = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        console.log("📌 Firestore Data Retrieved:", events); // Debugging Log
+        setUpcomingEvents(events);
+      }
+    }, (error) => {
+      console.error("🔥 Firestore Error:", error);
+    });
+  
+    return () => unsubscribe(); // Cleanup listener on unmount
+  }, []);
+  
+
   return (
     <>
       <section className='hero'>
@@ -36,6 +59,25 @@ const Hero = () => {
                 <h3>{item.title}</h3>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+      {/* 🔹 NEW SECTION: What's New */}
+      <section className='whats-new'>
+        <div className='container'>
+          <Title title="What's New?" />
+          <div className='whats-new-content grid-3'>
+            {upcomingEvents.length > 0 ? (
+              upcomingEvents.map((event) => (
+                <div className='event-card' key={event.id}>
+                  <img src={event.image} alt={event.name} className='event-image' />
+                  <h3>{event.name}</h3>
+                  <p>{event.description}</p>
+                </div>
+              ))
+            ) : (
+              <p>No upcoming events at the moment.</p>
+            )}
           </div>
         </div>
       </section>

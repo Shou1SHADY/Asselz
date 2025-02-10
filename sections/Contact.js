@@ -1,12 +1,49 @@
-import { Title, TitleSm } from "@/components/common/Title"
-import React from "react"
-import { AiFillBehanceCircle, AiFillInstagram, AiFillLinkedin } from "react-icons/ai"
-import { BiUserCircle } from "react-icons/bi"
-import { BsFacebook } from "react-icons/bs"
-import { FiHeadphones, FiHelpCircle } from "react-icons/fi"
-import { IoLocationOutline } from "react-icons/io5"
+import { Title, TitleSm } from "@/components/common/Title";
+import React, { useState } from "react";
+import { AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
+import { BiUserCircle } from "react-icons/bi";
+import { BsFacebook } from "react-icons/bs";
+import { FiHeadphones, FiHelpCircle } from "react-icons/fi";
+import { IoLocationOutline } from "react-icons/io5";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    budget: "",
+    timeframe: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [responseMessage, setResponseMessage] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setResponseMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      setResponseMessage(data.message);
+      setFormData({ name: "", email: "", budget: "", timeframe: "", message: "" });
+    } catch (error) {
+      setResponseMessage("Failed to send message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <section className='contact bg-top'>
@@ -14,38 +51,35 @@ const Contact = () => {
           <div className='heading-title'>
             <TitleSm title='CONTACT' /> <br />
             <br />
-            <Title title="Let's start right now!" className='title-bg' />
+            <Title title="Let's start your project today!" className='title-bg' />
           </div>
           <div className='content py flex1'>
             <div className='left w-30'>
-              <div className='contact-deatils'>
+              <div className='contact-details'>
                 <div className='box'>
                   <FiHeadphones size={30} className='icons' />
-                  <h3>1-001-234-5678</h3>
-                  <span>Call us: Mon - Fri 9:00 - 19:00</span>
+                  <h3>01065586886</h3>
+                  <span>Call us: Mon - Fri 9:00 - 18:00</span>
                 </div>
                 <div className='box'>
                   <IoLocationOutline size={30} className='icons' />
-                  <h3>New York</h3>
-                  <span>990 Madison Ave, Midtown Manhattan, 2th Floor, NY 10022</span>
+                  <h3>Asellz Office</h3>
+                  <span>Based in Egypt – Serving clients globally</span>
                 </div>
                 <div className='box'>
                   <FiHelpCircle size={30} className='icons' />
-                  <h3>info@dream-theme.com</h3>
-                  <span>Drop us a line anytime!</span>
+                  <h3>Asselzsupplying@gmail.com</h3>
+                  <span>Reach out anytime for inquiries!</span>
                 </div>
                 <div className='box'>
                   <BiUserCircle size={30} className='icons' />
-                  <h3>hr@dream-theme.com</h3>
-                  <span>Career at Asselz</span>
+                  <h3>Asselzsupplying@gmail.com</h3>
+                  <span>Careers at Asellz</span>
                 </div>
               </div>
               <ul>
                 <li className='icon'>
                   <BsFacebook size={25} />
-                </li>
-                <li className='icon'>
-                  <AiFillBehanceCircle size={25} />
                 </li>
                 <li className='icon'>
                   <AiFillInstagram size={25} />
@@ -56,42 +90,46 @@ const Contact = () => {
               </ul>
             </div>
             <div className='right w-70'>
-              <TitleSm title='Make an online enquiry' />
-              <p className='desc-p'>Got questions? Ideas? Fill out the form below to get our proposal. </p>
+              <TitleSm title='Make an online inquiry' />
+              <p className='desc-p'>Have questions or ideas? Fill out the form below and we'll get back to you with our proposal.</p>
 
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className='grid-2'>
                   <div className='inputs'>
                     <span>Name</span>
-                    <input type='text' />
+                    <input type='text' name='name' value={formData.name} onChange={handleChange} placeholder='Enter your name' required />
                   </div>
                   <div className='inputs'>
                     <span>Email</span>
-                    <input type='text' />
+                    <input type='email' name='email' value={formData.email} onChange={handleChange} placeholder='Enter your email' required />
                   </div>
                 </div>
                 <div className='grid-2'>
                   <div className='inputs'>
-                    <span>your budget</span>
-                    <input type='text' />
+                    <span>Budget</span>
+                    <input type='text' name='budget' value={formData.budget} onChange={handleChange} placeholder='Estimated budget' required />
                   </div>
                   <div className='inputs'>
-                    <span>timeframe</span>
-                    <input type='text' />
+                    <span>Timeframe</span>
+                    <input type='text' name='timeframe' value={formData.timeframe} onChange={handleChange} placeholder='Project deadline' required />
                   </div>
                 </div>
                 <div className='inputs'>
-                  <span>TELL US A BIT ABOUT YOUR PROJECT*</span>
-                  <textarea cols='30' rows='10'></textarea>
+                  <span>Tell us about your project*</span>
+                  <textarea name='message' cols='30' rows='10' value={formData.message} onChange={handleChange} placeholder='Describe your project in detail' required></textarea>
                 </div>
-                <button className='button-primary'>Submit</button>
+                <button type='submit' className='button-primary' disabled={loading}>
+                  {loading ? "Sending..." : "Submit"}
+                </button>
               </form>
+
+              {responseMessage && <p className="response-message">{responseMessage}</p>}
             </div>
           </div>
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
