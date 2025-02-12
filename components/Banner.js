@@ -10,9 +10,9 @@ const Banner = () => {
             <Title title='We are ready to help you grow' /> <br />
             <TitleLogo title='Get in touch today!' />
           </div>
-          <div>
+          {/* <div>
             <button className='button-primary'>Request a Consultation</button>
-          </div>
+          </div> */}
         </div>
       </section>
     </>

@@ -21,7 +21,7 @@ const Agency = () => {
               <div className='grid-3'>
                 <div className='box'>
                   <h1 className='indigo'>10+</h1>
-                  <h3>Years of experience</h3>
+                  <h3>5 Years of experience</h3>
                 </div>
                 <div className='box'>
                   <h1 className='indigo'>50+</h1>

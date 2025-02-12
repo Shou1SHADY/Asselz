@@ -7,6 +7,8 @@ import { Title, TitleLogo, TitleSm } from "@/components/common/Title";
 import { BlogCard, Brand } from "@/components/router";
 import React, { useEffect, useState } from "react";
 import { db, collection, onSnapshot } from "@/firebaseConfig";
+import Link from "next/link"
+import Image from "next/image";
 
 const Hero = () => {
   const [upcomingEvents, setUpcomingEvents] = useState([]);
@@ -35,7 +37,18 @@ const Hero = () => {
     <>
       <section className='hero'>
         <div className='container'>
-          <TitleLogo title='Asellz' caption='Global Supplier' className='logobg' />
+          {/* <TitleLogo title='Asellz' caption='Global Supplier' className='logobg' /> */}
+          <div className="logo">
+  <Link href="/">
+    <Image 
+      src="/images/output-onlinepngtools.png" 
+      alt="Asselz Logo" 
+      width={540} 
+      height={180} 
+      className="logo-image"
+    />
+  </Link>
+</div>
           <h1 className='hero-title'>YOUR PARTNER IN GROWTH</h1>
 
           <div className='sub-heading'>

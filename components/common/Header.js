@@ -4,6 +4,7 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { RiMenu4Line } from "react-icons/ri"
 import { AiOutlineClose } from "react-icons/ai"
+import Image from "next/image";
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState("")
@@ -17,11 +18,17 @@ const Header = () => {
     <>
       <header>
         <div className='container'>
-          <div className='logo'>
-            <Link href='/'>
-              <TitleLogo title='sellz' caption='A' className='logomin' />
-            </Link>
-          </div>
+        <div className="logo">
+  <Link href="/">
+    <Image 
+      src="/images/output-onlinepngtools.png" 
+      alt="Asselz Logo" 
+      width={170} 
+      height={60} 
+      className="logo-image"
+    />
+  </Link>
+</div>
           <nav className={open ? "openMenu" : "closeMenu"} onClick={() => setOpen(null)}>
             <Link href='/' className={activeLink == "/" ? "activeLink" : "none"}>
               Home
@@ -44,7 +51,7 @@ const Header = () => {
             <Link href='/contact' className={activeLink == "/contact" ? "activeLink" : "none"}>
               Contact
             </Link>
-            <button className='button-primary'>book a consultation</button>
+            {/* <button className='button-primary'>book a consultation</button> */}
           </nav>
           <button onClick={() => setOpen(!open)}>{open ? <AiOutlineClose size={25} /> : <RiMenu4Line size={25} />}</button>
         </div>
