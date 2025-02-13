@@ -34,7 +34,7 @@
 
     .titleSm {
       font-size: 1.5rem;
-      z-index: 1000;
+      z-index: 100;
       margin: 0 $xl-1;
     }
     span {
@@ -513,4 +513,8 @@ footer {
   .logo-image {
     max-width: 200px; /* Reduce size for smaller screens */
   }
+}
+
+.disabled {
+  pointer-events: none
 }

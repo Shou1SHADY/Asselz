@@ -10,16 +10,16 @@ const Footer = () => {
         <div className='container'>
           <div className='grid-4'>
             <div className='logo'>
-              <TitleLogo title='sellz' caption='A'  className='logobg' />
+              {/* <TitleLogo title='sellz' caption='A'  className='logobg' /> */}
               <br />
               <span>
                 Questions? Reach us <br /> Monday – Friday from 9 am to 6 pm
               </span>
               <br />
-              <br />
-              <h3>+1 001 234 5678</h3>
-              <br />
-              <button className='button-primary'>Request for quote</button>
+              {/* <br />
+              <h3>+1 001 234 5678</h3> */}
+              {/* <br /> */}
+              {/* <button className='button-primary'>Request for quote</button> */}
             </div>
             <ul>
               <h3>COMPANY</h3>

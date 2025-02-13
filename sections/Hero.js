@@ -39,7 +39,12 @@ const Hero = () => {
         <div className='container'>
           {/* <TitleLogo title='Asellz' caption='Global Supplier' className='logobg' /> */}
           <div className="logo">
-  <Link href="/">
+  <Link 
+  className={'disabled'} 
+  href="/" tabIndex="-1" aria-disabled="true" style={{
+    'pointer-event' :'none'
+
+  }}>
     <Image 
       src="/images/output-onlinepngtools.png" 
       alt="Asselz Logo" 
