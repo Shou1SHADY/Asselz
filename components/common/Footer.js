@@ -56,10 +56,10 @@ const Footer = () => {
               <li>
                 <Link href='/expertise/3'>Photography & Videography</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href='/expertise/4'>Social Media Marketing
                 </Link>
-              </li>
+              </li> */}
             </ul>
             <ul>
               <h3>CONNECT</h3>
