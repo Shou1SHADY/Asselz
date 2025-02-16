@@ -1,0 +1,73 @@
+.giveawaysPage {
+    padding: 60px 0;
+    text-align: center;
+  
+    .description {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 40px;
+    }
+  
+    .categorySection {
+      margin-bottom: 50px;
+      padding: 30px;
+      border-radius: 10px;
+      background: #f9f9f9;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+  
+    /* 🔹 Left Side: Text */
+    .textContent {
+      margin-bottom: 20px;
+      h2 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 1.1rem;
+        color: #666;
+      }
+    }
+  
+    /* 🔹 Right Side: Images */
+    .imageGrid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px; /* Space between images */
+      justify-content: flex-start;
+    }
+  
+    .imageWrapper {
+      flex: 1 1 calc(33.33% - 15px); /* 3 images per row */
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+  
+      img {
+        width: 100%;
+        height: auto;
+        // object-fit: cover;
+        border-radius: 10px;
+      }
+  
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  
+  /* 🔹 Responsive Design */
+  @media screen and (max-width: 1024px) {
+    .imageWrapper {
+      flex: 1 1 calc(50% - 15px); /* 2 images per row on medium screens */
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .imageWrapper {
+      flex: 1 1 calc(100% - 15px); /* 1 image per row on small screens */
+    }
+  }
+  

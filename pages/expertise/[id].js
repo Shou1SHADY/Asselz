@@ -16,11 +16,12 @@ const ExpertiseDetail = () => {
   const expertiseComponents = {
     1: <Giveaways />,
     2: <Events />,
-    3: <Production />,
-    4: <Videography />,
-    5: <Photography />,
-    6: <SocialMedia />,
-    7: <WebDevelopment />,
+    // 3: <Production />,
+    // 4: <Videography />,
+    
+    3: <Photography />,
+    4: <SocialMedia />,
+    5: <WebDevelopment />,
   };
 
   return expertiseComponents[id] || <p>Loading...</p>; // Show correct page or "Loading..."

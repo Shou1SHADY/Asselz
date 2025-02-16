@@ -13,7 +13,7 @@ const Footer = () => {
               {/* <TitleLogo title='sellz' caption='A'  className='logobg' /> */}
               <br />
               <span>
-                Questions? Reach us <br /> Monday – Friday from 9 am to 6 pm
+                Questions? Reach us <br /> 24/7
               </span>
               <br />
               {/* <br />
@@ -24,61 +24,65 @@ const Footer = () => {
             <ul>
               <h3>COMPANY</h3>
               <li>
-                <Link href='/'>About agency</Link>
+                <Link href='/agency'>About us</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href='/'>Our team</Link>
-              </li>
+              </li> */}
               <li>
-                <Link href='/'>Showcase</Link>
+                <Link href='/showcase'>Showcase</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href='/'>Blog</Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link href='/'>Demo design system</Link>
-              </li>
+              </li> */}
               <li>
-                <Link href='/'>Contact</Link>
+                <Link href='/contact'>Contact</Link>
               </li>
             </ul>
             <ul>
               <h3>SERVICES</h3>
               <li>
-                <Link href='/'>Web Design & Development</Link>
+                <Link href='/expertise/5'>Web Design & Development</Link>
               </li>
               <li>
-                <Link href='/'>Branding & Creative Services</Link>
+                <Link href='/expertise/2'>Events & Kittering</Link>
               </li>
               <li>
-                <Link href='/'>Digital Marketing</Link>
+                <Link href='/expertise/1'>Giveaways</Link>
               </li>
               <li>
-                <Link href='/'>E-Commerce</Link>
+                <Link href='/expertise/3'>Photography & Videography</Link>
+              </li>
+              <li>
+                <Link href='/expertise/4'>Social Media Marketing
+                </Link>
               </li>
             </ul>
             <ul>
               <h3>CONNECT</h3>
               <div className='connect'>
                 <li>
-                  <Link href='/'>
+                  {/* <Link href='/'> */}
                     <BsFacebook size={25} />
-                  </Link>
+                  {/* </Link> */}
                 </li>
+                {/* <li> */}
+                  {/* <Link href='/'> */}
+                    {/* <AiFillBehanceCircle size={25} /> */}
+                  {/* </Link> */}
+                {/* </li> */}
                 <li>
-                  <Link href='/'>
-                    <AiFillBehanceCircle size={25} />
-                  </Link>
-                </li>
-                <li>
-                  <Link href='/'>
+                  {/* <Link href='/'> */}
                     <AiFillInstagram size={25} />
-                  </Link>
+                  {/* </Link> */}
                 </li>
                 <li>
-                  <Link href='/'>
+                  {/* <Link href='/'> */}
                     <AiFillLinkedin size={25} />
-                  </Link>
+                  {/* </Link> */}
                 </li>
               </div>
             </ul>

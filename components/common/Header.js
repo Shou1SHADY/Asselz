@@ -41,7 +41,7 @@ const Header = () => {
             Home
           </Link>
           <Link href="/agency" className={activeLink == "/agency" ? "activeLink" : "none"} onClick={handleCloseMenu}>
-            Agency
+            Company
           </Link>
           <Link href="/services" className={activeLink == "/services" ? "activeLink" : "none"} onClick={handleCloseMenu}>
             Services
@@ -49,9 +49,9 @@ const Header = () => {
           <Link href="/showcase" className={activeLink == "/showcase" ? "activeLink" : "none"} onClick={handleCloseMenu}>
             Showcase
           </Link>
-          <Link href="/blogs" className={activeLink == "/blogs" ? "activeLink" : "none"} onClick={handleCloseMenu}>
+          {/* <Link href="/blogs" className={activeLink == "/blogs" ? "activeLink" : "none"} onClick={handleCloseMenu}>
             Blog
-          </Link>
+          </Link> */}
           <Link href="/contact" className={activeLink == "/contact" ? "activeLink" : "none"} onClick={handleCloseMenu}>
             Contact
           </Link>

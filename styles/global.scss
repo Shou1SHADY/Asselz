@@ -86,6 +86,7 @@
   .cards {
     margin-top: $xll;
     p {
+      margin-top: 95px ;
       margin-bottom: $xl-3;
       font-size: $xl;
       line-height: $xl-5;
@@ -97,14 +98,19 @@
         width: $xll-3;
         height: $xll-3;
         img {
-          width: 350px;
-          height: 100px;
+          // margin-right: 70%;
+          // width: 25vw;
+          // height: 25vh;
+          width:300px;
+          height:185px;
           object-fit: cover;
           border-radius: 50%;
         }
       }
       .img-text {
-        margin-left: $xl-3;
+        // margin-top: 16vh ;
+        margin-top: 20px;
+        margin-left: 20vw;
         h3 {
           font-size: $xl-2;
           margin-bottom: $s;
@@ -429,7 +435,7 @@ footer {
 
 .expertise-detail {
   text-align: center;
-  padding: 60px 0;
+  padding: 40px 0;
 
   .expertise-image {
     width: 100%;
@@ -502,6 +508,49 @@ footer {
 
 /* 🔹 Mobile Optimization */
 @media screen and (max-width: 768px) {
+  .testimonial {
+    .card {
+      padding: 20px;
+    }
+    .cards {
+      margin-top: $xll;
+      p {
+        margin-bottom: $xl-3;
+        font-size: $xl;
+        line-height: $xl-5;
+      }
+      .image {
+        @include flex(center, none, none);
+        margin-bottom: $xl-4;
+        .img {
+          width: $xll-3;
+          height: $xll-3;
+          img {
+            // margin-right: 70%;
+            width: 32vw;
+            height: 13vh;
+            object-fit: cover;
+            border-radius: 50%;
+          }
+        }
+        .img-text {
+          margin-top: 10vh ;
+          margin-left: 30vw;
+          h3 {
+            font-size: $xl-2;
+            margin-bottom: $s;
+          }
+          span {
+            color: rgba($white, 0.5);
+            text-transform: uppercase;
+            font-size: $sm;
+            letter-spacing: 3px;
+          }
+        }
+      }
+    }
+  }
+  
   .hero-title {
     // font-size: $xll-2;
     // line-height: 115px;
