@@ -18,10 +18,10 @@ const Agency = () => {
             <div className="left w-60 py">
               <TitleSm title="Delivering Premium Corporate & Promotional Solutions" />
               <p className="desc-p">
-                Asellz is a **leading provider of high-quality corporate giveaways, stationery, digital marketing, and
-                promotional products**. We specialize in **custom branding solutions** that help businesses strengthen
+                Asellz is a leading provider of high-quality corporate giveaways, stationery, digital marketing, and
+                promotional products. We specialize in custom branding solutions that help businesses strengthen
                 their identity and customer engagement. Over the years, we have built long-lasting relationships with
-                top corporations and startups by offering **tailor-made solutions** that drive brand visibility and loyalty.
+                top corporations and startups by offering tailor-made solutions that drive brand visibility and loyalty.
               </p>
               <div className="grid-3">
                 <div className="box">
@@ -51,10 +51,10 @@ const Agency = () => {
               <TitleSm title="Our Mission" />
               <br />
               <p className="misson-p">
-                At Asellz, our mission is to **empower businesses with top-quality branding, giveaways, and promotional
-                materials**. We **understand the power of branding**, which is why we offer customized solutions that
+                At Asellz, our mission is to empower businesses with top-quality branding, giveaways, and promotional
+                materials. We understand the power of branding, which is why we offer customized solutions that
                 elevate corporate identity and marketing efforts. Our goal is to provide innovative, high-quality products
-                at **competitive prices** while ensuring **exceptional customer service** at every step.
+                at competitive prices while ensuring exceptional customer service at every step.
               </p>
             </div>
           </div>
