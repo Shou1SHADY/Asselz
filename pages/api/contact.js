@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     console.log("🚀 Sending email from: ", process.env.EMAIL_USER);
     
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      throw new Error("Missing EMAIL_USER or EMAIL_PASS in environment variables.");
+      throw new Error("Missing EMAIL_USER or  EMAIL_PASS in environment variables.");
     }
 
     // ✅ Configure Nodemailer Transporter
