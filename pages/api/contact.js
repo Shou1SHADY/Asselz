@@ -8,7 +8,7 @@ export default async function handler(req, res) {
   const { name, email, budget, timeframe, message } = req.body;
 
   try {
-    console.log("🚀 Sending email from:", process.env.EMAIL_USER);
+    console.log("🚀 Sending email from: ", process.env.EMAIL_USER);
     
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
       throw new Error("Missing EMAIL_USER or EMAIL_PASS in environment variables.");
