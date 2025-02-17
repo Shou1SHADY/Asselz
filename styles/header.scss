@@ -36,7 +36,7 @@ header {
       position: fixed;  /* Ensure menu stays on top */
       top: 0;
       left: 0;
-      width: 100%;
+      width: 100vw;
       height: 100vh; /* Full-screen menu */
       padding: 50px 1px;
       background: $dark;
