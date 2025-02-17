@@ -217,12 +217,16 @@ footer {
 
 //Agency Page
 .bg-top {
+  // position: relative; /* Ensure the parent is properly contained */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+
   &::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 100% !important;
+    width: 100vw; /* Ensure it only takes up the viewport width */
+    max-width: 100%;
     height: 60vh;
     background-image: url("../assets/images/blurfooter-min.png");
     background-size: cover;
@@ -232,6 +236,7 @@ footer {
     transform: rotate(180deg);
   }
 }
+
 .agency {
   .content {
     margin-top: $xll;

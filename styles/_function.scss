@@ -32,6 +32,10 @@
 }
 
 @media screen and (max-width: 500px) {
+  .agency .content .box h1 {
+    font-size: 38px !important;
+    font-weight: 400;
+}
   .container {
     max-width: 100%;
     padding: 0 20px;

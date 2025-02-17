@@ -10,7 +10,7 @@ export default function Home() {
         <meta name="description" content="Asselz provides high-quality giveaways, events, branding, and digital marketing solutions for businesses." />
 
         {/* ✅ Viewport Configuration for Responsive Design */}
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        {/* <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /> */}
 
         {/* ✅ Favicon */}
         <link rel="icon" href="/images/favicon.ico" />
