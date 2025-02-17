@@ -68,8 +68,8 @@ const giveawaysData = [
     ],
   },
   {
-    category: "Kittering",
-    description: "Kittering with high-end branding.",
+    category: "Catering",
+    description: "Catering with high-end branding.",
     images: [
       "/images/kittering1.jpeg",
       "/images/kittering2.jpeg",
@@ -83,9 +83,9 @@ const Events = () => {
   return (
     <section className={styles.giveawaysPage}>
       <div className="container">
-        <Title title="Events & Kittering" />
+        <Title title="Events & Catering" />
         <p className={styles.description}>
-          Event and kittering planning and execution with high-end branding.
+          Event and Catering planning and execution with high-end branding.
         </p>
 
         {giveawaysData.map((item, index) => (

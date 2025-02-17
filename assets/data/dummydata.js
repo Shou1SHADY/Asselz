@@ -33,7 +33,7 @@ export const expertise = [
   },
   {
     id: 2,
-    title: "Events & Kittering",
+    title: "Events & Catering",
     cover: "../images/events.jpg",
     desc: [{ text: "Event planning & execution" }, { text: "Corporate activations" }],
   },

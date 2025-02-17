@@ -48,7 +48,7 @@ const Footer = () => {
                 <Link href='/expertise/5'>Web Design & Development</Link>
               </li>
               <li>
-                <Link href='/expertise/2'>Events & Kittering</Link>
+                <Link href='/expertise/2'>Events & Catering</Link>
               </li>
               <li>
                 <Link href='/expertise/1'>Giveaways</Link>
