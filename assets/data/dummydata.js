@@ -76,14 +76,14 @@ export const testimonial = [
     name: "Lafarge Egypt",
     cover: "../images/lafarge.jpeg",
     post: "Client",
-    desc: "Asellz provided outstanding branding materials and giveaways. Their team exceeded our expectations!",
+    desc: "",
   },
   {
     id: 2,
     name: "Geocycle Egypt",
     cover: "../images/geocycle.webp",
     post: "Client",
-    desc: "Asellz handled everything seamlessly!",
+    desc: "",
   },
   {
     id: 3,

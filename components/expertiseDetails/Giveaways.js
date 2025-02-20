@@ -61,7 +61,13 @@ const giveawaysData = [
       "/images/premium3.png",
       "/images/premium4.png",
       "/images/premium5.png",
-     
+      "/images/premium-giveaways/WhatsApp Image 2025-02-19 at 7.06.31 PM.jpeg",
+      "/images/premium-giveaways/WhatsApp Image 2025-02-19 at 7.07.05 PM.jpeg",
+      "/images/premium-giveaways/WhatsApp Image 2025-02-19 at 7.07.40 PM.jpeg",
+      "/images/premium-giveaways/WhatsApp Image 2025-02-19 at 7.10.43 PM.jpeg",
+      "/images/premium-giveaways/WhatsApp Image 2025-02-19 at 7.11.51 PM.jpeg",
+   
+     "/images/premium-giveaways/prem1.png",
     ],
   },
   {
@@ -75,29 +81,38 @@ const giveawaysData = [
       "/images/stringBag.png",
       "/images/eco2.png",
       "/images/eco3.png",
-      
+      "/images/premium-giveaways/WhatsApp Image 2025-02-19 at 7.14.33 PM.jpeg",
+      "/images/premium-giveaways/WhatsApp Image 2025-02-19 at 7.15.03 PM.jpeg",
+      "/images/premium-giveaways/WhatsApp Image 2025-02-19 at 7.13.52 PM.jpeg",
       
 
     ],
   },
   {
-    category: "Customized Giveaways",
+    category: "Customized and Summer Giveaways",
     description: "Tailor-made promotional items to fit your brand.",
     images: [
       "/images/customized3.png",
-      "/images/customized1.png",
+      // "/images/customized1.png",
       "/images/customized2.png",
-    ],
-  },
-  {
-    category: "Summer Giveaways",
-    description: "Summer items to fit your brand.",
-    images: [
       "/images/summer1.png",
       "/images/summer2.png",
       "/images/eco4.png",
+"/images/summer-customized/WhatsApp Image 2025-02-19 at 7.18.34 PM.jpeg",
+"/images/summer-customized/WhatsApp Image 2025-02-19 at 7.19.01 PM.jpeg",
+"/images/summer-customized/WhatsApp Image 2025-02-19 at 7.19.41 PM.jpeg",
+"/images/summer-customized/WhatsApp Image 2025-02-19 at 7.20.09 PM.jpeg",
     ],
   },
+  // {
+  //   category: "Summer Giveaways",
+  //   description: "Summer items to fit your brand.",
+  //   images: [
+  //     "/images/summer1.png",
+  //     "/images/summer2.png",
+  //     "/images/eco4.png",
+  //   ],
+  // },
   {
     category: "Tech Giveaways",
     description: "High-tech promotional items for modern businesses.",
@@ -105,6 +120,12 @@ const giveawaysData = [
       "/images/tech-1.png",
       "/images/tech-2.png",
       "/images/tech-3.png",
+      "/images/tech-giveraways/WhatsApp Image 2025-02-19 at 7.22.26 PM.jpeg",
+      "/images/tech-giveraways/WhatsApp Image 2025-02-19 at 7.29.31 PM.jpeg",
+      "/images/tech-giveraways/WhatsApp Image 2025-02-19 at 7.29.49 PM.jpeg",
+      "/images/tech-giveraways/WhatsApp Image 2025-02-19 at 7.30.43 PM.jpeg",
+      "/images/practical.jpg",
+      "/images/tech-giveraways/tech1.png",
     ],
   },
 ];
