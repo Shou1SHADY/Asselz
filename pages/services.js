@@ -6,7 +6,7 @@ const services = () => {
   return (
     <>
       <Head>
-        <title>Team - Asselz</title>
+        <title>Team - Asellz</title>
       </Head>
       <Services />
     </>

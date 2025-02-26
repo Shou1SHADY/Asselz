@@ -89,10 +89,10 @@ const Footer = () => {
           </div>
           <div className='legal connect py'>
             <div className='text'>
-              <span>© 2025 ASSELZ COMPANY. ALL RIGHTS RESERVED.</span>
+              <span>© 2025 ASELLZ COMPANY. ALL RIGHTS RESERVED.</span>
             </div>
             <div className='connect'>
-              <span>ASSELZ COMPANY</span>
+              <span>ASELLZ COMPANY</span>
               <span> &nbsp; | &nbsp; </span>
               <span>TERMS & CONDITIONS</span>
             </div>
