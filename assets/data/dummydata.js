@@ -148,6 +148,12 @@ export const showcase = [
     cover: "../images/futtaim-show3.jpeg",
   },
   {
+    id: 15,
+    title: "LafargeHolcim",
+    catgeory: "Events",
+    cover: "../images/sample-lafarge.jpeg",
+  },
+  {
     id: 2,
     title: "Al-Futtaim Group",
     catgeory: "Giveaways",
