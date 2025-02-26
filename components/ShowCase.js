@@ -13,13 +13,14 @@ const ShowCase = () => {
           <div className="heading-title">
             <Title title="Selected cases" />
           </div>
-          <div className="hero-content grid-3 py">
+          {/* py */}
+          <div className="hero-content grid-4 ">
             {showcase.map((item) => (
               <Card data={item} key={item.id} isShowcase={true} />
             ))}
           </div>
           <div className="card links">
-            <Link href="/">
+            <Link href="/showcase">
               VIEW ALL CASES <HiOutlineArrowRight className="link-icon" />
             </Link>
           </div>

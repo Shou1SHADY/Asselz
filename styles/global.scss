@@ -129,7 +129,7 @@
 //showcase
 .showcase {
   .card-img {
-    height: 400px;
+    height: 300px;
   }
   .links {
     @include flex(none, flex-end, none);
@@ -495,22 +495,29 @@ footer {
   }
   .sub-heading {
     display: flex;
+    flex-direction: column; /* Stack items vertically */
     justify-content: center;
+    align-items: center;
     font-size: 1rem;
-    // padding-right: 30vw;
-    // padding-left : 30vw;
-
+    gap: 8px; /* Add space between items */
+  
     .titleSm {
-      font-size: 0.8rem!important;
-      
-      margin: 0 $xl-1;
+      font-size: 0.9rem !important;
+      margin: 0; /* Remove extra margins */
+      text-transform: uppercase;
+      letter-spacing: 1px; /* Improve readability */
     }
+  
     span {
-      font-size: $xll;
-      line-height: 0;
-      color: $green;
+
+      font-size: 1rem !important; /* Adjust dot size */
+      line-height: 0.3 !important; /* Reduce spacing between items */
+      color: rgba(0, 0, 0, 0.1) !important;
+      margin: 4px 0  !important; /* Add vertical spacing for better separation */
     }
   }
+  
+  
 }
 
 /* 🔹 Mobile Optimization */

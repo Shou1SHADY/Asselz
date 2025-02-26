@@ -102,7 +102,7 @@ const Hero = () => {
 
       <Expertise />
       <Banner />
-      <Testimonial />
+      {/* <Testimonial /> */}
       <ShowCase />
       <Brand />
 
