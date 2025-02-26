@@ -26,7 +26,7 @@ export default function Home() {
         {/* <meta name="google-site-verification" content="your-google-verification-code" /> */}
 
         {/* ✅ Canonical URL (Best for SEO) */}
-        <link rel="canonical" href="https://asselz.com" />
+        <link rel="canonical" href="https://asellz.net" />
       </Head>
       <Hero />
     </>
