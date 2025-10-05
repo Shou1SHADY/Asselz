@@ -17,7 +17,7 @@
     text-align: left;
   }
 
-  /* 🔹 Left Side: Text */
+  // 🔹 Left Side: Text
   .textContent {
     margin-bottom: 20px;
 
@@ -33,17 +33,17 @@
     }
   }
 
-  /* 🔹 Right Side: Images */
+  // 🔹 Right Side: Image Grid
   .imageGrid {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center; /* Center images on all screen sizes */
+    justify-content: center;
     width: 100%;
   }
 
   .imageWrapper {
-    flex: 0 0 calc(33.33% - 20px); /* 3 images per row on desktop */
+    flex: 0 0 calc(33.33% - 20px);
     max-width: calc(33.33% - 20px);
     border-radius: 10px;
     overflow: hidden;
@@ -59,40 +59,67 @@
       transform: scale(1.08);
     }
   }
+
+  // 🔹 Load More Button
+  .loadMore {
+    margin-top: 30px;
+    text-align: center;
+
+    button {
+      background-color: #0070f3;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #0059c1;
+      }
+
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    }
+  }
 }
 
-/* 🔹 Responsive Design */
+// 🔹 Responsive Design
 
 /* Medium screens (tablets: 768px - 1024px) */
 @media screen and (max-width: 601px) {
-  .imageWrapper {
+    .imageWrapper {
     
     flex: 0 0 calc(100% - 15px) !important; /* 2 images per row */
     max-width: calc(100% - 15px) !important;
     flex-basis: 100% !important;
     flex-grow: 1 !important;
+    }
   }
-}
 
-/* Small screens (mobile: under 600px) */
+
+// Small screens (mobile: under 600px)
 @media screen and (max-width: 600px) {
   .imageGrid {
     // flex-direction: column !important;
     gap: 10px !important; /* More spacing for single-column layout */
-  }
+    }
 
-  .imageWrapper {
+    .imageWrapper {
     // width: 200px;
-    
+
     // flex: 1 1 100% !important; /* Full width for mobile */
     flex-basis: 100% !important;
     flex-grow: 1 !important;
     max-width: 100%;
-    img {
-      width: 100% !important;
+      img {
+        width: 100% !important;
       height: 300px !important;
       // height: 100%;
       // border-radius: 100px;
+      }
     }
   }
-}
