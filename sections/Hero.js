@@ -22,8 +22,7 @@ const Hero = () => {
           id: doc.id,
           ...doc.data(),
         }));
-        console.log("📌 Firestore Data Retrieved:", events); // Debugging Log
-        setUpcomingEvents(events);
+         setUpcomingEvents(events);
       }
     }, (error) => {
       console.error("🔥 Firestore Error:", error);

@@ -8,7 +8,6 @@ export default async function handler(req, res) {
   const { name, email, budget, timeframe, message } = req.body;
 
   try {
-    console.log("🚀 Sending email from: ", process.env.EMAIL_USER);
     
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
       throw new Error("Missing EMAIL_USER or  EMAIL_PASS in environment variables.");
@@ -23,8 +22,6 @@ export default async function handler(req, res) {
       },
     });
 
-    console.log("✅ Transporter configured successfully");
-
     // ✅ Send Email
     await transporter.sendMail({
       from: `"${name}" <${email}>`, 
@@ -38,8 +35,6 @@ export default async function handler(req, res) {
         Message: ${message}
       `,
     });
-
-    console.log("📩 Email sent successfully!");
     return res.status(200).json({ message: "Email sent successfully!" });
 
   } catch (error) {
