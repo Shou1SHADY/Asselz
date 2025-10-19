@@ -1,6 +1,5 @@
 import { Hero } from "@/sections";
 import Head from "next/head";
-import ImageUploader from "@/components/imaeUploader";
 export default function Home() {
   return (
     <>
