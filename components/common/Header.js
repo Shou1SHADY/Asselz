@@ -56,7 +56,9 @@ const Header = () => {
             Contact
           </Link>
         </nav>
-        <button onClick={() => setOpen(!open)}>{open ? <AiOutlineClose size={25} /> : <RiMenu4Line size={25} />}</button>
+        <button className="toggle-button" onClick={() => setOpen(!open)}>
+          {open ? <AiOutlineClose size={25} /> : <RiMenu4Line size={25} />}
+        </button>
       </div>
     </header>
   );
