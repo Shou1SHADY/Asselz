@@ -2,94 +2,158 @@
   padding: 60px 0;
   text-align: center;
 
-  .description {
+.description {
     font-size: 1.2rem;
     color: #555;
     margin-bottom: 40px;
+}
+
+.tabNavigation {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+  border-bottom: 2px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.tabButton {
+  padding: 12px 24px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  transition: all 0.3s ease;
+  margin-bottom: -2px;
+
+  &:hover {
+    color: var(--foreground);
   }
 
-  .categorySection {
+  &.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+  }
+}
+
+.categorySection {
     margin-bottom: 50px;
     padding: 30px;
     border-radius: 10px;
-    background: #f9f9f9;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: left;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.textContent {
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--foreground);
   }
 
-  // 🔹 Left Side: Text
-  .textContent {
-    margin-bottom: 20px;
-
-    h2 {
-      font-size: 2rem;
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.1rem;
-      color: #666;
-    }
+  p {
+    font-size: 16px;
+    color: var(--muted-foreground);
+    line-height: 1.6;
   }
+}
 
-  // 🔹 Right Side: Image Grid
-  .imageGrid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+.imageGrid {
+  display: flex;
+  flex-wrap: wrap;
+   gap: 28px;
     justify-content: center;
     width: 100%;
-  }
+}
 
-  .imageWrapper {
-    flex: 0 0 calc(33.33% - 20px);
-    max-width: calc(33.33% - 20px);
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 3 / 3;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--card);
+
+  img {
+    width: 100%;
+    height: auto;
     border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
 
     &:hover {
       transform: scale(1.08);
-    }
   }
+}
 
   // 🔹 Load More Button
-  .loadMore {
-    margin-top: 30px;
-    text-align: center;
+.loadMore {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 
-    button {
-      background-color: #0070f3;
-      color: #fff;
-      border: none;
-      padding: 12px 24px;
-      font-size: 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+  button {
+    padding: 12px 32px;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border: none;
+    font-size: 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
 
-      &:hover {
-        background-color: #0059c1;
-      }
+    &:hover {
+      background: linear-gradient(203deg, rgba(192, 90, 255, 1) 0%, rgba(67, 39, 158, 1) 100%);
+    }
+    &:hover:not(:disabled) {
+      opacity: 0.9;
+    }
 
-      &:disabled {
-        background-color: #ccc;
-        cursor: not-allowed;
-      }
+    &:disabled {
+      background-color: #ccc;   
+      opacity: 0.6;
+      cursor: not-allowed;
     }
   }
 }
 
-// 🔹 Responsive Design
+.noMoreText {
+  text-align: center;
+  color: var(--muted-foreground);
+  font-size: 14px;
+}
 
-/* Medium screens (tablets: 768px - 1024px) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .imageGrid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .tabButton {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .textContent h2 {
+    font-size: 22px;
+  }
+}
 @media screen and (max-width: 601px) {
     .imageWrapper {
     
@@ -117,9 +181,10 @@
     max-width: 100%;
       img {
         width: 100% !important;
-      height: 300px !important;
+      height: 250px !important;
       // height: 100%;
       // border-radius: 100px;
       }
     }
   }
+}
