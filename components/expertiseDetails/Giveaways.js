@@ -38,8 +38,8 @@ const categories = [
   },
 ]
 
-const LIMIT = 6
-
+const LIMIT = 6;
+const Xs = 6 ;
 const Giveaways = () => {
   const [data, setData] = useState({})
   const [page, setPage] = useState({})
