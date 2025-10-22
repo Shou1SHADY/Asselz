@@ -36,6 +36,11 @@ const categories = [
     title: "Rubber Giveaways",
     desc: "Durable rubber items that combine practicality with brand visibility — ideal for outdoor events and active lifestyles.",
   },
+  {
+    key: "Pens",
+    title: "Pens Giveaways",
+    desc: "Classic branded pens that leave a lasting impression with every word written — perfect for conferences, offices, and promotional events.",
+  }
 ]
 
 const LIMIT = 6;
