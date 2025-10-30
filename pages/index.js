@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        {/* ✅ Page Title */}
+        {/* ✅ Page Title 2 */}
         <title>Asellz Design - Your Partner in Growth</title>
         <meta
           name="description"
