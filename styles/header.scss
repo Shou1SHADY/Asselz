@@ -5,8 +5,10 @@ header {
   top: 0;
   backdrop-filter: blur(10px);
   z-index: 999;
+
   .container {
     @include flex(center, space-between, none);
+
     nav {
       a {
         margin: 0 $xl-2;
@@ -14,9 +16,11 @@ header {
     }
   }
 }
+
 .activeLink {
   position: relative;
   color: $green;
+
   &::after {
     content: "";
     position: absolute;
@@ -27,55 +31,68 @@ header {
     background-color: $green;
   }
 }
+
 @media screen and (max-width: 800px) {
   header {
     nav {
       display: none;
     }
+
     .toggle-button {
       display: block;
     }
 
     /* When the menu is closed on mobile, hide the nav links */
     .closeMenu {
-      display: none;
+      display: none !important;
     }
+
     .openMenu {
-      position: fixed;  /* Ensure menu stays on top */
+      position: fixed;
+      /* Ensure menu stays on top */
       top: 0;
       left: 0;
       width: 100vw;
-      height: 100vh; /* Full-screen menu */
+      height: 100vh;
+      /* Full-screen menu */
       padding: 50px 1px;
       background: $dark;
       display: flex;
       flex-direction: column;
-      z-index: 9999; /* Ensure it appears above other content */
-      overflow-y: auto; /* Allows scrolling if needed */
-      
+      z-index: 9999;
+      /* Ensure it appears above other content */
+      overflow-y: auto;
+      /* Allows scrolling if needed */
+
       a {
         // width: 100%;
         display: block;
         text-align: center;
         margin-bottom: 20px !important;
-        font-size: 1.2rem; /* Adjust for readability */
+        font-size: 1.2rem;
+        /* Adjust for readability */
         padding: 10px 0;
       }
     }
+
     .button-primary {
       display: none;
     }
   }
+
   .activeLink {
     &::after {
       display: none;
     }
   }
 }
+
 .toggle-button {
-  display: none; /* Hide the button by default */
+  display: none;
+  /* Hide the button by default */
   background: none;
   border: none;
-  color: white; /* Or your desired color */
+  color: white;
+  /* Or your desired color */
   cursor: pointer;
 }

@@ -15,6 +15,20 @@ const Header = () => {
     setActiveLink(router.pathname);
   }, [router.pathname]);
 
+  // Prevent background scrolling when mobile menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [open]);
+
   // Close menu when a link is clicked (only on mobile)
   const handleCloseMenu = () => {
     if (window.innerWidth <= 800) {
