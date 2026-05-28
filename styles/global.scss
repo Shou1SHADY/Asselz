@@ -527,7 +527,7 @@
   }
   
   @media (max-width: 768px) {
-    padding: $sp-64 0;
+    padding: $sp-48 0 $sp-64;
     
     .card-img {
       height: 240px;
@@ -1099,7 +1099,7 @@ footer {
 @media screen and (max-width: 800px) {
   .hero {
     min-height: 80vh;
-    padding: $sp-80 0 $sp-40;
+    padding: $sp-64 0 $sp-40;
     .hero-title {
       font-size: 2rem;
       letter-spacing: -0.5px;
@@ -1174,6 +1174,7 @@ footer {
 
 @media screen and (max-width: 500px) {
   .hero .hero-title { font-size: 1.7rem; }
+  .hero .hero-logo img { max-width: 220px; }
   .hero .sub-heading {
     flex-direction: column;
     gap: 4px;
@@ -1181,6 +1182,7 @@ footer {
   }
   .hero-sec .hero-content { grid-template-columns: 1fr; }
   .expertise .hero-content { grid-template-columns: 1fr; }
+  .showcase .card-img { height: 200px; }
   .agency .content .box h1 { font-size: 2.5rem !important; }
   .container {
     max-width: 100%;
@@ -1203,15 +1205,79 @@ footer {
   }
   .heading-title {
     max-width: 100%;
+    padding-top: $sp-40;
+    padding-bottom: $sp-24;
+    p { font-size: $md; }
   }
   .button-primary, .secondary-button {
-    padding: 14px 32px;
+    padding: 14px 28px;
     font-size: $sm;
+    width: 100%;
+  }
+  footer {
+    padding: $sp-48 0 0 0;
+    .grid-4 { gap: 32px; }
+    .legal {
+      flex-direction: column;
+      text-align: center;
+      gap: 12px;
+    }
+  }
+  .banner .container {
+    padding: $sp-32 $sp-24;
+    h1 { font-size: 1.3rem; }
+    .secondary-button { width: 100%; text-align: center; }
+  }
+  .contact .content .left {
+    .box {
+      padding: 16px;
+      h3 { font-size: $md; }
+    }
+    ul { gap: 12px; }
+  }
+  .contact .content .right {
+    padding: 24px 16px;
+    .grid-2 { gap: 16px; }
+    input, textarea {
+      font-size: $lg !important;
+      padding: 14px 16px !important;
+    }
+  }
+  .testimonial .card {
+    padding: 20px;
+    .image .img { width: 60px; height: 60px; }
+  }
+  .expertise {
+    padding: $sp-48 0;
+    .hero-content { gap: 16px; }
   }
 }
 
 @media screen and (max-width: 480px) {
-  .logo-image { max-width: 150px; }
+  .logo-image { max-width: 130px; }
+  .hero-subtitle { font-size: $md !important; }
+  .card .card-details {
+    padding: 16px;
+    .titleSm { font-size: $xl-1; }
+  }
+  .title { font-size: 1.6rem; }
+  .title-bg { font-size: 1.8rem; }
+}
+
+@media screen and (max-width: 375px) {
+  .hero {
+    padding: $sp-40 0 $sp-24;
+    .hero-title { font-size: 1.4rem; }
+    .hero-logo img { max-width: 160px; }
+    .hero-cta { margin-top: $sp-40; }
+  }
+  .showcase {
+    padding: $sp-32 0 $sp-48;
+    .card-img { height: 180px; }
+    .card-details { padding: 14px; }
+  }
+  .banner .container { padding: $sp-24 $sp-16; }
+  footer .grid-4 { grid-template-columns: 1fr; }
 }
 
 .disabled {
