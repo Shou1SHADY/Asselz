@@ -1,13 +1,26 @@
-$indigo: #845aff;
+$indigo: #6c5ce7;
+$indigo-light: #a29bfe;
+$gold: #d4a843;
+$gold-light: #f0d78c;
 $white: #ffffff;
-$dark: #080e10;
-$green: #b4b4b4;
-$gradient: linear-gradient(203deg, rgba(192, 90, 255, 1) 0%, rgba(67, 39, 158, 1) 100%);
-$gradient2: linear-gradient(250deg, rgba(255, 85, 219, 1) 24%, rgba(52, 108, 255, 1) 100%);
+$dark: #080c14;
+$dark-secondary: #0f1520;
+$dark-card: #111827;
+$slate: #94a3b8;
+$slate-light: #cbd5e1;
+$green: #22c55e;
+$red: #ef4444;
+
+$gradient: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+$gradient-gold: linear-gradient(135deg, #d4a843 0%, #f0d78c 100%);
+$gradient-hero: linear-gradient(180deg, rgba(108,92,231,0.15) 0%, rgba(8,12,20,1) 100%);
 
 .green {
   color: $green;
 }
 .indigo {
   color: $indigo;
+}
+.gold {
+  color: $gold;
 }

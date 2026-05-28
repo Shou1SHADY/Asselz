@@ -8,7 +8,7 @@ export const TitleLogo = ({ title, caption, className }) => {
 }
 
 export const TitleSm = ({ title }) => {
-  return <h1 className='titleSm'>{title}</h1>
+  return <h2 className='titleSm'>{title}</h2>
 }
 export const Title = ({ title, className }) => {
   return <h1 className={`${className} title`}>{title}</h1>

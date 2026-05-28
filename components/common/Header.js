@@ -3,17 +3,28 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { RiMenu4Line } from "react-icons/ri";
 import { AiOutlineClose } from "react-icons/ai";
+import { FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState("");
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const router = useRouter();
 
   useEffect(() => {
     setActiveLink(router.pathname);
   }, [router.pathname]);
+
+  // Scroll detection for navbar shrink effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Prevent background scrolling when mobile menu is open
   useEffect(() => {
@@ -22,56 +33,58 @@ const Header = () => {
     } else {
       document.body.style.overflow = "unset";
     }
-
-    // Cleanup on unmount
     return () => {
       document.body.style.overflow = "unset";
     };
   }, [open]);
 
-  // Close menu when a link is clicked (only on mobile)
   const handleCloseMenu = () => {
     if (window.innerWidth <= 800) {
       setOpen(false);
     }
   };
 
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/agency", label: "Company" },
+    { href: "/services", label: "Services" },
+    { href: "/showcase", label: "Showcase" },
+  ];
+
   return (
-    <header>
+    <header className={scrolled ? "scrolled" : ""}>
       <div className="container">
         <div className="logo">
           <Link href="/">
             <Image 
               src="/images/output-onlinepngtools.png" 
-              alt="Asselz Logo" 
-              width={170} 
-              height={60} 
+              alt="Asellz Logo" 
+              width={130} 
+              height={44} 
               className="logo-image"
+              priority
             />
           </Link>
         </div>
         <nav className={open ? "openMenu" : "closeMenu"}>
-          <Link href="/" className={activeLink == "/" ? "activeLink" : "none"} onClick={handleCloseMenu}>
-            Home
-          </Link>
-          <Link href="/agency" className={activeLink == "/agency" ? "activeLink" : "none"} onClick={handleCloseMenu}>
-            Company
-          </Link>
-          <Link href="/services" className={activeLink == "/services" ? "activeLink" : "none"} onClick={handleCloseMenu}>
-            Services
-          </Link>
-          <Link href="/showcase" className={activeLink == "/showcase" ? "activeLink" : "none"} onClick={handleCloseMenu}>
-            Showcase
-          </Link>
-          {/* <Link href="/blogs" className={activeLink == "/blogs" ? "activeLink" : "none"} onClick={handleCloseMenu}>
-            Blog
-          </Link> */}
-          <Link href="/contact" className={activeLink == "/contact" ? "activeLink" : "none"} onClick={handleCloseMenu}>
-            Contact
-          </Link>
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={activeLink === link.href ? "activeLink" : ""}
+              onClick={handleCloseMenu}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <div className="mobile-cta">
+            <Link href="/contact" className="button-primary" onClick={handleCloseMenu}>
+              Get in Touch <FaArrowRight size={14} />
+            </Link>
+          </div>
         </nav>
-        <button className="toggle-button" onClick={() => setOpen(!open)}>
-          {open ? <AiOutlineClose size={25} /> : <RiMenu4Line size={25} />}
+        <button className="toggle-button" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open}>
+          {open ? <AiOutlineClose size={22} /> : <RiMenu4Line size={22} />}
         </button>
       </div>
     </header>

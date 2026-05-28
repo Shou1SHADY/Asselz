@@ -20,12 +20,10 @@ export default function Home() {
           property="og:description"
           content="High-quality giveaways, event planning, branding, and digital marketing solutions."
         />
-        <meta property="og:image" content="/images/Asselz.png" />
-        <meta property="og:url" content="https://asellz.net" />
+        <meta property="og:image" content="/images/Asellz.png" />
+        <meta property="og:url" content="https://asellz.com" />
         <meta property="og:type" content="website" />
-
-        {/* ✅ Canonical URL */}
-        <link rel="canonical" href="https://asellz.net" />
+        <link rel="canonical" href="https://asellz.com" />
       </Head>
 
       <main>

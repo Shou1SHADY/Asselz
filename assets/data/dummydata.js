@@ -55,12 +55,13 @@ export const expertise = [
     cover: "../images/photography.jpeg",
     desc: [{ text: "Product & event photography" }, { text: "Corporate shoots" }],
   },
-  {
-    id: 4,
-    title: "Social Media Marketing Coming soon",
-    cover: "../images/socialmedia.webp",
-    desc: [{ text: "Social media strategy" }, { text: "Content creation & paid ads" }],
-  },
+  // TODO: Re-enable when Social Media Marketing service is live
+  // {
+  //   id: 4,
+  //   title: "Social Media Marketing Coming soon",
+  //   cover: "../images/socialmedia.webp",
+  //   desc: [{ text: "Social media strategy" }, { text: "Content creation & paid ads" }],
+  // },
   {
     id:5,
     title: "Website Development",

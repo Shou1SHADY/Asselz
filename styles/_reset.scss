@@ -1,23 +1,38 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap);
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", "Poppins", sans-serif;
   background-color: $dark;
+  background-image: 
+    radial-gradient(ellipse at center, transparent 30%, $dark 95%),
+    linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 100vw 100vh, 64px 64px, 64px 64px;
+  background-attachment: fixed, fixed, fixed;
+  background-position: center center;
   color: $white;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .container {
   max-width: 90%;
   margin: auto;
 }
-
 a {
   text-decoration: none;
   color: $white;
-  text-transform: capitalize;
+  transition: color $transition-fast;
+  cursor: pointer;
 }
 textarea,
 input,
@@ -27,7 +42,16 @@ button {
   margin: 0;
   border: none;
   color: $white;
-  outline: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition: outline-color $transition-fast;
+  &:focus-visible {
+    outline-color: $indigo;
+  }
+}
+::selection {
+  background: rgba(108, 92, 231, 0.3);
+  color: $white;
 }
 .flex {
   display: flex;
@@ -40,15 +64,13 @@ button {
   text-align: center;
 }
 .py {
-  padding: 80px 0;
+  padding: 60px 0;
 }
-
 h3,
 h4,
 h5 {
-  font-weight: 500;
+  font-weight: 600;
 }
-
 ul {
   text-decoration: none;
   list-style-type: none;

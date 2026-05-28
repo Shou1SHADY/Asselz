@@ -68,24 +68,30 @@ const Contact = () => {
                 </div>
                 <div className='box'>
                   <FiHelpCircle size={30} className='icons' />
-                  <h3>Asselzsupplying@gmail.com</h3>
+                  <h3>marketing@asellz.com</h3>
                   <span>Reach out anytime for inquiries!</span>
                 </div>
                 <div className='box'>
                   <BiUserCircle size={30} className='icons' />
-                  <h3>Asselzsupplying@gmail.com</h3>
+                  <h3>marketing@asellz.com</h3>
                   <span>Careers at Asellz</span>
                 </div>
               </div>
               <ul>
                 <li className='icon'>
-                  <BsFacebook size={25} />
+                  <a href='https://facebook.com/asellz' target='_blank' rel='noopener noreferrer' aria-label="Follow Asellz on Facebook">
+                    <BsFacebook size={25} />
+                  </a>
                 </li>
                 <li className='icon'>
-                  <AiFillInstagram size={25} />
+                  <a href='https://instagram.com/asellz' target='_blank' rel='noopener noreferrer' aria-label="Follow Asellz on Instagram">
+                    <AiFillInstagram size={25} />
+                  </a>
                 </li>
                 <li className='icon'>
-                  <AiFillLinkedin size={25} />
+                  <a href='https://linkedin.com/company/asellz' target='_blank' rel='noopener noreferrer' aria-label="Follow Asellz on LinkedIn">
+                    <AiFillLinkedin size={25} />
+                  </a>
                 </li>
               </ul>
             </div>
@@ -96,27 +102,27 @@ const Contact = () => {
               <form onSubmit={handleSubmit}>
                 <div className='grid-2'>
                   <div className='inputs'>
-                    <span>Name</span>
-                    <input type='text' name='name' value={formData.name} onChange={handleChange} placeholder='Enter your name' required />
+                    <label htmlFor='name'>Name</label>
+                    <input id='name' type='text' name='name' value={formData.name} onChange={handleChange} placeholder='Enter your name' required />
                   </div>
                   <div className='inputs'>
-                    <span>Email</span>
-                    <input type='email' name='email' value={formData.email} onChange={handleChange} placeholder='Enter your email' required />
+                    <label htmlFor='email'>Email</label>
+                    <input id='email' type='email' name='email' value={formData.email} onChange={handleChange} placeholder='Enter your email' required />
                   </div>
                 </div>
                 <div className='grid-2'>
                   <div className='inputs'>
-                    <span>Budget</span>
-                    <input type='text' name='budget' value={formData.budget} onChange={handleChange} placeholder='Estimated budget' required />
+                    <label htmlFor='budget'>Budget</label>
+                    <input id='budget' type='text' name='budget' value={formData.budget} onChange={handleChange} placeholder='Estimated budget' required />
                   </div>
                   <div className='inputs'>
-                    <span>Timeframe</span>
-                    <input type='text' name='timeframe' value={formData.timeframe} onChange={handleChange} placeholder='Project deadline' required />
+                    <label htmlFor='timeframe'>Timeframe</label>
+                    <input id='timeframe' type='text' name='timeframe' value={formData.timeframe} onChange={handleChange} placeholder='Project deadline' required />
                   </div>
                 </div>
                 <div className='inputs'>
-                  <span>Tell us about your project*</span>
-                  <textarea name='message' cols='30' rows='10' value={formData.message} onChange={handleChange} placeholder='Describe your project in detail' required></textarea>
+                  <label htmlFor='message'>Tell us about your project*</label>
+                  <textarea id='message' name='message' cols='30' rows='10' value={formData.message} onChange={handleChange} placeholder='Describe your project in detail' required></textarea>
                 </div>
                 <button type='submit' className='button-primary' disabled={loading}>
                   {loading ? "Sending..." : "Submit"}

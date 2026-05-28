@@ -9,19 +9,39 @@ $xl-3: 22px;
 $xl-4: 25px;
 $xl-5: 30px;
 $xl-6: 35px;
-$xll: 60px;
-$xll-2: 80px;
-$xll-3: 100px;
+$sp-40: 40px;
+$sp-48: 48px;
+$sp-56: 56px;
+$sp-64: 64px;
+$sp-80: 80px;
+$sp-100: 100px;
+$sp-120: 120px;
 
-$shadow-md: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+$shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+$shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+$shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
+$shadow-card: 0 2px 8px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.05);
+$shadow-card-hover: 0 8px 30px rgba(108,92,231,0.15), 0 0 0 1px rgba(108,92,231,0.25);
+
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 16px;
+$radius-xl: 24px;
+$radius-2xl: 50px;
+
+$transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
 p {
-  font-size: $xl-2;
+  font-size: $lg;
+  line-height: 1.7;
+  color: $slate-light;
 }
 .desc-p {
   font-size: $lg;
-  line-height: $xl-5;
-  color: rgba($white, 0.6);
+  line-height: 1.8;
+  color: $slate;
   margin: $xl-3 0;
 }
 .w-30 {
@@ -40,7 +60,7 @@ p {
   width: 70%;
 }
 .round {
-  border-radius: 50px 0 50px 0;
+  border-radius: $radius-2xl 0 $radius-2xl 0;
 }
 .ml {
   margin-left: 50px;

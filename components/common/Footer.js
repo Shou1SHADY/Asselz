@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { TitleLogo } from "./Title"
-import { BsFacebook } from "react-icons/bs"
-import { AiFillBehanceCircle, AiFillInstagram, AiFillLinkedin } from "react-icons/ai"
+import { AiFillInstagram, AiFillLinkedin } from "react-icons/ai"
+import { FaWhatsapp } from "react-icons/fa"
 
 const Footer = () => {
   return (
@@ -65,24 +65,19 @@ const Footer = () => {
               <h3>CONNECT</h3>
               <div className='connect'>
                 <li>
-                  {/* <Link href='/'> */}
-                    <BsFacebook size={25} />
-                  {/* </Link> */}
-                </li>
-                {/* <li> */}
-                  {/* <Link href='/'> */}
-                    {/* <AiFillBehanceCircle size={25} /> */}
-                  {/* </Link> */}
-                {/* </li> */}
-                <li>
-                  {/* <Link href='/'> */}
+                  <a href='https://instagram.com/asellz' target='_blank' rel='noopener noreferrer' aria-label="Follow Asellz on Instagram">
                     <AiFillInstagram size={25} />
-                  {/* </Link> */}
+                  </a>
                 </li>
                 <li>
-                  {/* <Link href='/'> */}
+                  <a href='https://linkedin.com/company/asellz' target='_blank' rel='noopener noreferrer' aria-label="Follow Asellz on LinkedIn">
                     <AiFillLinkedin size={25} />
-                  {/* </Link> */}
+                  </a>
+                </li>
+                <li>
+                  <a href='https://wa.me/201065586886' target='_blank' rel='noopener noreferrer' aria-label="Contact Asellz on WhatsApp">
+                    <FaWhatsapp size={25} />
+                  </a>
                 </li>
               </div>
             </ul>

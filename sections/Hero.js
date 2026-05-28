@@ -2,63 +2,34 @@ import { home } from "@/assets/data/dummydata";
 import Banner from "@/components/Banner";
 import Expertise from "@/components/Expertise";
 import ShowCase from "@/components/ShowCase";
-import Testimonial from "@/components/Testimonial";
-import { Title, TitleLogo, TitleSm } from "@/components/common/Title";
-import { BlogCard, Brand } from "@/components/router";
-import React, { useEffect, useState } from "react";
-import { db, collection, onSnapshot } from "@/firebaseConfig";
-import Link from "next/link"
+import { Title, TitleSm } from "@/components/common/Title";
+import { Brand } from "@/components/router";
+import Link from "next/link";
 import Image from "next/image";
 
 const Hero = () => {
-  const [upcomingEvents, setUpcomingEvents] = useState([]);
-
-  useEffect(() => {
-    const unsubscribe = onSnapshot(collection(db, "whatsNew"), (snapshot) => {
-      if (snapshot.empty) {
-        console.log("❌ No upcoming events found in Firestore.");
-      } else {
-        const events = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-         setUpcomingEvents(events);
-      }
-    }, (error) => {
-      console.error("🔥 Firestore Error:", error);
-    });
-  
-    return () => unsubscribe(); // Cleanup listener on unmount
-  }, []);
-  
-
   return (
     <>
       <section className='hero'>
         <div className='container'>
-          {/* <TitleLogo title='Asellz' caption='Global Supplier' className='logobg' /> */}
-          <div className="logo">
-  <Link 
-  className={'disabled'} 
-  href="/" tabIndex="-1" aria-disabled="true" style={{
-    'pointer-event' :'none'
-
-  }}>
-    <Image 
-      src="/images/output-onlinepngtools.png" 
-      alt="Asselz Logo" 
-      width={540} 
-      height={180} 
-      className="logo-image"
-    />
-  </Link>
-</div>
+          <div className='hero-logo'>
+            <Image src='/images/output-onlinepngtools.png' alt='Asellz Logo' width={350} height={118} className='logo-image' priority unoptimized />
+          </div>
           <h1 className='hero-title'>YOUR PARTNER IN GROWTH</h1>
-
+          <p className='hero-subtitle'>
+            Premium corporate giveaways, event production, and digital branding solutions trusted by leading companies worldwide.
+          </p>
           <div className='sub-heading'>
-            <TitleSm title='GIVEAWAYS' /> <span>.</span>
-            <TitleSm title='EVENTS' /> <span>.</span>
-            <TitleSm title='SOCIAL MEDIA MARKETING' />
+            <TitleSm title='GIVEAWAYS' />
+            <span>&middot;</span>
+            <TitleSm title='EVENTS' />
+            <span>&middot;</span>
+            <TitleSm title='DIGITAL MARKETING' />
+          </div>
+          <div className='hero-cta'>
+            <Link href='/contact' className='button-primary' style={{ display: 'inline-block', padding: '14px 36px', fontSize: '15px' }}>
+              Start Your Project
+            </Link>
           </div>
         </div>
       </section>
@@ -66,49 +37,27 @@ const Hero = () => {
       <section className='hero-sec'>
         <div className='container'>
           <div className='heading-title'>
-            <Title title='Your trusted provider for quality products & services' />
+            <TitleSm title='WHY ASELLZ' />
+            <Title title='Your trusted provider for quality products & services' className='title-bg' />
             <p>At Asellz, we deliver high-quality giveaways, event production, digital marketing, and branding solutions tailored for startups and corporations.</p>
           </div>
-          <div className='hero-content grid-4'>
+          <div className='hero-content'>
             {home.map((item, i) => (
               <div className='box' key={i}>
-                <span className='green'>{item.icon}</span> <br /><br />
+                <div className='icon-wrap'>
+                  <span className='green'>{item.icon}</span>
+                </div>
                 <h3>{item.title}</h3>
               </div>
             ))}
           </div>
         </div>
       </section>
-      {/* 🔹 NEW SECTION: What's New */}
-      <section className='whats-new'>
-        <div className='container'>
-          <Title title="What's New?" />
-          <div className='whats-new-content grid-3'>
-            {upcomingEvents.length > 0 ? (
-              upcomingEvents.map((event) => (
-                <div className='event-card' key={event.id}>
-                  <img src={event.image} alt={event.name} className='event-image' />
-                  <h3>{event.name}</h3>
-                  <p>{event.description}</p>
-                </div>
-              ))
-            ) : (
-              <p>No upcoming events at the moment.</p>
-            )}
-          </div>
-        </div>
-      </section>
 
       <Expertise />
       <Banner />
-      {/* <Testimonial /> */}
       <ShowCase />
       <Brand />
-
-      {/* <div className='text-center'>
-        <Title title='Latest news & articles' />
-      </div>
-      <BlogCard /> */}
     </>
   );
 };

@@ -1,6 +1,5 @@
 import Banner from "@/components/Banner";
 import Brand from "@/components/Brand";
-import Testimonial from "@/components/Testimonial";
 import { Title, TitleSm } from "@/components/common/Title";
 
 const Agency = () => {
@@ -9,13 +8,12 @@ const Agency = () => {
       <section className="agency bg-top">
         <div className="container">
           <div className="heading-title">
-            <TitleSm title="ABOUT ASELLZ" /> <br />
-            <br />
+            <TitleSm title="ABOUT ASELLZ" />
             <Title title="Your Trusted Partner for Corporate Branding & Supply" className="title-bg" />
           </div>
 
           <div className="content flex1">
-            <div className="left w-60 py">
+            <div className="left w-60" style={{ paddingTop: '40px' }}>
               <TitleSm title="Delivering Premium Corporate & Promotional Solutions" />
               <p className="desc-p">
                 Asellz is a leading provider of high-quality corporate giveaways, stationery, digital marketing, and
@@ -29,8 +27,9 @@ const Agency = () => {
                   <h3>Years of Experience</h3>
                 </div>
                 <div className="box">
-                  <h1 className="indigo">10+</h1>
-                  <h3>Corporate Clients</h3>
+                  {/* TODO: Confirm actual client count and update */}
+                  <h1 className="indigo">15+</h1>
+                  <h3>Clients Served</h3>
                 </div>
                 <div className="box">
                   <h1 className="indigo">200+</h1>
@@ -49,7 +48,6 @@ const Agency = () => {
             </div>
             <div className="right w-60 ml">
               <TitleSm title="Our Mission" />
-              <br />
               <p className="misson-p">
                 At Asellz, our mission is to empower businesses with top-quality branding, giveaways, and promotional
                 materials. We understand the power of branding, which is why we offer customized solutions that
@@ -62,12 +60,7 @@ const Agency = () => {
       </section>
 
       <Brand />
-      {/* <Testimonial /> */}
       <Banner />
-      <br />
-      <br />
-      <br />
-      <br />
     </>
   );
 };
